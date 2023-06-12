@@ -3,6 +3,23 @@ hide:
   - navigation
 ---
 
+<script>
+// Toggle open all details elements, onload
+// Regardless of their initial status
+// StackOverflow 43008609
+const expandElements = shouldExpand => {
+    let detailsElements = document.querySelectorAll("details");
+    
+    detailsElements = [...detailsElements];
+
+    if (shouldExpand) {
+        detailsElements.map(item => item.setAttribute("open", shouldExpand));
+    } else {
+        detailsElements.map(item => item.removeAttribute("open"));
+    }
+};
+</script>
+
 #  **A Living Review of Machine Learning for Particle Physics**
 
 *Modern machine learning techniques, including deep learning, is rapidly being applied, adapted, and developed for high energy physics.  The goal of this document is to provide a nearly comprehensive list of citations for those developing and applying these approaches to experimental, phenomenological, or theoretical analyses.  As a living document, it will be updated as often as possible to incorporate the latest developments.  A list of proper (unchanging) reviews can be found within.  Papers are grouped into a small set of topics to be as useful as possible.  Suggestions are most welcome.*
@@ -10,6 +27,9 @@ hide:
 [![download](https://img.shields.io/badge/download-review-blue.svg)](https://iml-wg.github.io/HEPML-LivingReview/review/hepml-review.pdf)
 [![github](https://badges.aleen42.com/src/github.svg)](https://github.com/iml-wg/HEPML-LivingReview)
 
+
+<a class="md-button" onClick="expandElements(true)">Expand all sections</a>
+<a class="md-button" onClick="expandElements(false)">Collapse all sections</a>
 ##  Reviews
 
 ??? example "Modern reviews"
@@ -607,7 +627,7 @@ hide:
     * [Disentangling Quarks and Gluons with CMS Open Data](https://arxiv.org/abs/2205.04459)
     * [Semi-supervised Graph Neural Networks for Pileup Noise Removal](https://arxiv.org/abs/2203.15823)
     * [Boosting mono-jet searches with model-agnostic machine learning](https://arxiv.org/abs/2204.11889) [[DOI](https://doi.org/10.1007/JHEP08(2022)015)]
-    * [Going off topics to demix quark and gluon jets in $\alpha_S$ extractions](https://arxiv.org/abs/2206.10642)
+    * [Going off topics to demix quark and gluon jets in \ensuremath{\alpha}$_{S}$ extractions](https://arxiv.org/abs/2206.10642) [[DOI](https://doi.org/10.1007/JHEP02(2023)150)]
     * [TopicFlow: Disentangling quark and gluon jets with normalizing flows](https://arxiv.org/abs/2211.16053)
     * [Searching for dark jets with displaced vertices using weakly supervised machine learning](https://arxiv.org/abs/2305.04372)
 
