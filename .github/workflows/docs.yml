@@ -82,6 +82,7 @@ jobs:
 
       - name: Add HEP review pdf to gh-page
         run: |
+          mkdir -p docs/assets/
           cp HEPML.pdf docs/assets/hepml_review.pdf
           git add -f docs/assets/hepml_review.pdf
           git status
